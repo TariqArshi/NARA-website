@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NARA Architects</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dynamic-tagline {
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            text-align: center;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .cta-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .cta-buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            text-decoration: none;
+            background-color: #545454;
+            color: #F6F6F6;
+            border-radius: 5px;
+        }
+        .featured-projects {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+        }
+        .featured-projects img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="images/NARA_Logo_Small.jpg" alt="NARA Architects Logo" class="header-logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="intro">
+            <h1 class="dynamic-tagline">Welcome to NARA Architects</h1>
+            <p class="dynamic-tagline">Designing spaces with innovation and creativity.</p>
+        </section>
+
+        <div class="cta-buttons">
+            <a href="portfolio.html">View Our Work</a>
+            <a href="contact.html">Get in Touch</a>
+        </div>
+
+        <section class="featured-projects">
+    <h2 style="text-align: center;">Featured Projects</h2>
+    <div class="carousel">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="images/residential1.jpg" alt="Project 1">
+                <h3>Project Name 1</h3>
+            </div>
+            <div class="carousel-slide">
+                <img src="images/residential2.jpg" alt="Project 2">
+                <h3>Project Name 2</h3>
+            </div>
+            <div class="carousel-slide">
+                <img src="images/commercial1.jpg" alt="Project 3">
+                <h3>Project Name 3</h3>
+            </div>
+        </div>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+</section>
+
+    </main>
+    
+<footer>
+    <img src="images/NARA_Logo.jpg" alt="NARA Architects Logo" class="footer-logo">
+    	<p>&copy; 2025 NARA Architects. All Rights Reserved.
+	</p>
+    
+    <div class="social-links">
+        <a href="https://www.instagram.com/nara.architectskl/" target="_blank" class="social-btn">
+    		<img src="images/instagram-icon.png" alt="Instagram" width="30">
+	</a>
+	<a href="https://www.tiktok.com/@YOUR_TIKTOK" target="_blank" class="social-btn">
+    		<img src="images/tiktok-icon.png" alt="TikTok" width="30">
+	</a>
+	<a href="https://www.facebook.com/people/NARA-Architects-Sdn-Bhd/61554802134703/" target="_blank" class="social-btn">
+		<img src="images/facebook-icon.png" alt="TikTok" width="30">
+	</a>
+	<a href="https://my.linkedin.com/?trk=organization_guest_nav-header-logo" target="_blank" class="social-btn">
+		<img src="images/linkedin-icon.png" alt="TikTok" width="30">
+	</a>
+    </div>
+</footer>
+
+<script>
+    let currentIndex = 0;
+
+    function moveSlide(step) {
+        const slides = document.querySelectorAll(".carousel-slide");
+        const totalSlides = slides.length;
+        
+        currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+        
+        document.querySelector(".carousel-container").style.transform = 
+            `translateX(-${currentIndex * 100}%)`;
+    }
+</script>
+
+</body>
+</html>
